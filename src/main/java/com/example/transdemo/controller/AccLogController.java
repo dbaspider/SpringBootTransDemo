@@ -35,4 +35,16 @@ public class AccLogController {
         }
         return "Add Log Success";
     }
+
+    @GetMapping("/log/add2")
+    public String addLog2() {
+        AccLog log = new AccLog();
+        log.setAccountId("1000");
+        log.setAccountName("admin");
+        log.setBalance(new BigDecimal(2000));
+
+        accLogService.addLog(log);
+        throw new RuntimeException();
+        //return "Add Log Success";
+    }
 }
